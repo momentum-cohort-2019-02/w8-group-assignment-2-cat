@@ -1,0 +1,34 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% block meta %}{% endblock %}
+    <title>{% block title %}Flashcards{% endblock %}</title>
+</head>
+<body>
+<header>
+    <h2><a href="{% url 'index' %}">Flashcards</a></h2>
+    <div class='profilebuttons'>
+        {% if user.is_authenticated %}
+            <h3><a href="{% url 'user-detail' user.pk %}">{{ user.username }}</a></h3>
+            <h3> | </h3>
+            <h3><a href="{% url 'auth_logout' %}">Logout</a></h3>
+        {% else %}
+            <h3><a href="{% url 'registration_register' %}">Register</a></h3>
+            <h3> | </h3>
+            <h3><a href="{% url 'auth_login' %}">Login</a></h3>
+        {% endif %}
+    </div>
+    
+</header>
+
+
+{% block content %}{% endblock %}
+</body>
+
+</html>
