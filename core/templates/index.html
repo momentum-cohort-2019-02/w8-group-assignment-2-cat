@@ -6,13 +6,5 @@
 <h1>
 Welcome!
 {% if user.is_authenticated %}
-    <h3><a href="{% url 'user-detail' user.pk %}">{{ user.username }}</a></h3>
-    <br><br><br>
-    <h5><a href="{% url 'choice' user.pk %}">Start reviewing?</h5>
-{% else %}
-    <h3><a href="{% url 'registration_register' %}">New user? Register here</a></h3>
-    <h3> OR </h3>
-    <h3><a href="{% url 'auth_login' %}">Returning user? Login</a></h3>
-{% endif %}
-</h1>
+
 
