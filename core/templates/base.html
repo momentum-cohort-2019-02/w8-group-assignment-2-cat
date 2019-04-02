@@ -14,21 +14,12 @@
 <header>
     <h2><a href="{% url 'index' %}">Flashcards</a></h2>
   <div class='profilebuttons'>
-        {% if user.is_authenticated %}
-            <h3><a href="{% url 'user-detail' user.pk %}">{{ user.username }}</a></h3>
-            <h3> | </h3>
-            <h3><a href="{% url 'auth_logout' %}">Logout</a></h3>
-        {% else %}
-            <h3><a href="{% url 'registration_register' %}">Register</a></h3>
-            <h3> | </h3>
-            <h3><a href="{% url 'auth_login' %}">Login</a></h3>
-        {% endif %}
   </div>
     
 </header>
 
 
-{% block content %}{% endblock %}
+
 </body>
 
 </html>
