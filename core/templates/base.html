@@ -13,7 +13,7 @@
 <body>
 <header>
     <h2><a href="{% url 'index' %}">Flashcards</a></h2>
-    <div class='profilebuttons'>
+  <div class='profilebuttons'>
         {% if user.is_authenticated %}
             <h3><a href="{% url 'user-detail' user.pk %}">{{ user.username }}</a></h3>
             <h3> | </h3>
@@ -23,7 +23,7 @@
             <h3> | </h3>
             <h3><a href="{% url 'auth_login' %}">Login</a></h3>
         {% endif %}
-    </div>
+  </div>
     
 </header>
 
