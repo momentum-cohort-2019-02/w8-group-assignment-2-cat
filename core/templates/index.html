@@ -4,7 +4,8 @@
 
 <div>
 <h1>
-Welcome!
+Welcome!</h1>
+
 {% if user.is_authenticated %}
     <h3><a href="{% url 'user-detail' user.pk %}">{{ user.username }}</a></h3>
     <br><br><br>
@@ -14,5 +15,5 @@ Welcome!
     <h3> OR </h3>
     <h3><a href="{% url 'auth_login' %}">Returning user? Login</a></h3>
 {% endif %}
-</h1>
+{% endblock content %}
 
