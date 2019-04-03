@@ -1,13 +1,14 @@
 {% extends "base.html" %}
-{% load staticfiles %}
+{% load static %}
 
 
 {% block content %}
 
 <div>
-<h1>
-Welcome!</h1>
+<h1>Welcome!</h1>
+</div>
 
+<a href="{% url 'quiz_new' %}">Make a quiz!</a>
 
 {% endblock content %}
 

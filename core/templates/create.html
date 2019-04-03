@@ -3,15 +3,15 @@
 {% block content %}
 <h3>Topic: </h3>
 
-<h5>What should the new clue be?</h5>
-<form method="POST" class="">
+<h5>What should the new question be?</h5>
+<form method="POST" class="question">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit" class="submit_button">Submit clue</button>
+    <button type="submit" class="submit_button">Submit question</button>
 </form>
 
 <h5>What is the answer?</h5>
-<form method="POST" class="">
+<form method="POST" class="answer">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit" class="submit_button">Submit answer</button>
