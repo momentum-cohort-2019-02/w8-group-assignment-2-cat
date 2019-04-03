@@ -32,7 +32,7 @@ def quiz_new(request):
             return redirect('create-card', pk=quiz.pk)
     else:
         form = QuizForm()
-    return render(request, 'create.html', {'form': form})
+    return render(request, 'create_quiz.html', {'form': form})
 
 # @login_required
 def card_new(request, pk):
@@ -47,4 +47,4 @@ def card_new(request, pk):
             return redirect('create-card', pk=card.pk)
     else:
         form = CardForm()
-    return render(request, 'create.html', {'form':form, 'quiz':quiz})
+    return render(request, 'create_card.html', {'form':form, 'quiz':quiz})
