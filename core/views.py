@@ -11,8 +11,8 @@ def index(request):
     cards = Card.objects.all()
 
     context = {
-       'Card': cards,
-       'Quiz': quizzes,
+       'cards': cards,
+       'quizzes': quizzes,
     }
 
     return render(request, 'index.html', context=context)
