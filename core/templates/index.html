@@ -8,11 +8,10 @@
 <h1>Welcome!</h1>
 </div>
 
-<a href="{% url 'create-quiz' %}">Make a quiz!</a>
 
-{% for quiz in quizzes %}
-<h3>{{ quiz.title }}</h3>
-{% endfor %}
+    {% for quiz in quizzes %} 
+    <a href="{% url 'index'%}">{{quiz.title}}</a>
+    {% endfor %}
 
 {% endblock content %}
 

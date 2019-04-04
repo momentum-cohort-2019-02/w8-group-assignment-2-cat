@@ -8,6 +8,7 @@ class Quiz(models.Model):
     date_created = models.DateTimeField(auto_now_add=True)
     answer_right = models.IntegerField(default="0")
     answer_wrong = models.IntegerField(default="0")
+    
 
     def __str__(self):
         return self.title
