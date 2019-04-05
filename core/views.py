@@ -48,3 +48,4 @@ def card_new(request, pk):
     else:
         form = CardForm()
     return render(request, 'create_card.html', {'form':form, 'quiz':quiz})
+
