@@ -7,7 +7,6 @@
 <div>
 <h1>Welcome!</h1>
 </div>
-<a href="{% url 'play_quiz'%}">Play quiz!</a>
 
     {% for quiz in quizzes %} 
     <a href="{% url 'index'%}">{{quiz.title}}</a>
