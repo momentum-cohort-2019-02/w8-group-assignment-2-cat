@@ -8,7 +8,6 @@
 <h1>Welcome!</h1>
 </div>
 
-
     {% for quiz in quizzes %} 
     <a href="{% url 'game'%}">{{quiz.title}}</a>
     {% endfor %}
