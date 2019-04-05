@@ -49,7 +49,6 @@ def card_new(request, pk):
         form = CardForm()
     return render(request, 'create_card.html', {'form':form, 'quiz':quiz})
 
-
 def game(request):
     quizzes = Quiz.objects.all()
     cards = Card.objects.all()

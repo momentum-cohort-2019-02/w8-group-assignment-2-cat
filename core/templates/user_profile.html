@@ -15,14 +15,7 @@
             <td class="ma2">Email: </td>
             <td class="ma2">{{ user.email }}</td>
         </tr>
-        <tr class="ma2">
-            <td class="ma2">First Name: </td>
-            <td class="ma2">{% if user.first_name %}{{ user.first_name }}{%else%}<span class="light-silver">(nothing entered)</span> {%endif%}</td>
-        </tr>
-        <tr class="ma2">
-            <td class="ma2">Last Name: </td>
-            <td class="ma2">{% if user.last_name %}{{ user.last_name }}{%else%}<span class="light-silver">(nothing entered)</span> {%endif%}</td>
-        </tr>
+        
     </table>
     {% endif %}
     <br><a href="{% url 'create-quiz' %}">Make a quiz!</a>
