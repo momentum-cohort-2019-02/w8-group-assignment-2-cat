@@ -44,7 +44,7 @@ def card_new(request, pk):
             card.quiz = quiz
             card.save()
             messages.success(request, "Card created!")
-            return redirect('create-card', pk=card.pk)
+            return redirect('create-card', pk=pk)
     else:
         form = CardForm()
     return render(request, 'create_card.html', {'form':form, 'quiz':quiz})
