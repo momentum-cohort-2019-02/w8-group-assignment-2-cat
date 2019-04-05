@@ -20,24 +20,19 @@
 </ul>
 {% endif %}
 </div>
-    <body>
-        <section class="main">
-            <section class="title_bar">
-                <h1 class="title">Flashcards</h1>
-            {% block nav %}
-                <nav class="title_nav">
-                    <a href="{% url 'index' %}">Home</a> |
-                    {% if user.is_authenticated %}
-                        <a href="{% url 'auth_logout' %}">Logout</a> |
+<header class="title_bar">
+        <div class="home"><h4><a href="{% url 'index' %}"><img src="https://cdn.dribbble.com/users/530738/screenshots/1910587/dribbble_iso_house.gif" width="110" height="60"></a></div></h4>
+        <h1 class="title">Flashcards</h1>
+            {% if user.is_authenticated %}
+                <div class="username"><h4><a href="{% url 'user_profile' user.username %}">{{ user.get_username }}</a> | 
+                <a href="{% url 'auth_logout' %}">Logout</a></h4></div>
 
-                        <span class="username"><a href="{% url 'user_profile' user.username %}">{{ user.get_username }}</a></span>
-                    {% else %}
-                        <a href="{% url 'auth_login' %}">Login</a> |
-                        <a href="{% url 'registration_register' %}">Register</a> |
-                    {% endif %}
-                </nav>
-            {% endblock %}
-            </section>
+            {% else %}
+                <div class="login"><h4><a href="{% url 'auth_login' %}">Login</a> |
+                <a href="{% url 'registration_register' %}">Register</a></h4></div>
+            {% endif %}
+
+</header>
             <section class="content">
                 {% block content %}{% endblock %}
             </section>
