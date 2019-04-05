@@ -11,7 +11,7 @@ class Quiz(models.Model):
     
 
     def __str__(self):
-        return self.title
+        return str(self.title)
     # def get_absolute_url(self):
     #     return reverse('create-card', args=[str(self.id)])
 
@@ -23,4 +23,4 @@ class Card(models.Model):
     answer_wrong = models.IntegerField(default="0")
     
     def __str__(self):
-        return self.quiz
+        return str(self.quiz)
