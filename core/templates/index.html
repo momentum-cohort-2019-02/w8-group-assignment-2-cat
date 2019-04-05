@@ -10,8 +10,10 @@
 
 
     {% for quiz in quizzes %} 
-    <a href="{% url 'index'%}">{{quiz.title}}</a>
+    <a href="{% url 'game'%}">{{quiz.title}}</a>
     {% endfor %}
+
+    <a href="{% url 'game' %}">Click here for your gaaaaaaame.</a>
 
 {% endblock content %}
 
