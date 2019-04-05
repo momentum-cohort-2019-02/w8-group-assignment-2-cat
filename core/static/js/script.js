@@ -8,6 +8,7 @@ let flashcard_child = `
     <div class="flashcardChild">
       <p>
         ${card_questions[questions]}
+        {{Card.Objects.all}}
       </p>
       <button class="display_answer_button">
 
