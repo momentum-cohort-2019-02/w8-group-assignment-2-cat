@@ -5,12 +5,13 @@
 {% block content %}
 
 <div>
-<h1>Welcome!</h1>
+<h1 class="welcome">Welcome!</h1>
 </div>
-
+<div class="quizzes">
     {% for quiz in quizzes %} 
-    <a href="{% url 'game'%}">{{quiz.title}}</a>
-    {% endfor %}
 
+    <div class="deck"><a href="{% url 'game'%}">{{quiz.title}}</a></div>
+    {% endfor %}
+</div>
 {% endblock content %}
 
