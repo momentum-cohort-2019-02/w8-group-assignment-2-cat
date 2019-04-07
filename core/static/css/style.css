@@ -7,7 +7,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     border-style: ridge;
-    border-color: red;
+    border-color: darkgrey;
     border-radius: 10px;
     
 }
@@ -15,34 +15,34 @@
 .title {
     width: 50%;
     text-align: center;
-    border-style: double;
+    color: white;
     margin: 15px;
-    border-color: greenyellow;
-    background-image:
-    radial-gradient(
-        circle at top right,
-        white,
-        orange
-    );
+    
+    border-radius: 10px;
+    background: darkgrey;
+    padding: 20px;
 }
 
 .home {
-    border-style: double;
+    
     margin: 15px;
     padding: 10px;
-    border-color: aqua;
+    
+    border-radius: 10px;
 }
 
 .username {
-    border-style: double;
+    
     margin: 15px;
-    border-color: rgb(225, 137, 65);
+    padding: 15px;
+
 }
 
 .login {
-    border-style: double;
+    
     margin: 15px;
-    border-color: red;
+    
+    border-radius: 10px;
 }
 
 .welcome {
@@ -55,14 +55,16 @@
 }
 
 .deck {
-    width: 20rem;
+    width: 21rem;
     height: 5rem;
     color: aquamarine;
     text-decoration: none;
     border-style: dotted;
-    border-color: brown;
+    border-color: darkgrey;
+    border-radius: 10px;
     text-align: center;
     justify-content: space-evenly;
     margin: 15px;
+    padding-top: 25px;
 
 }
