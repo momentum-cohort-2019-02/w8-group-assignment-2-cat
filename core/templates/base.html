@@ -21,7 +21,7 @@
 {% endif %}
 </div>
 <header class="title_bar">
-        <div class="home"><h4><a href="{% url 'index' %}"><img src="https://cdn.dribbble.com/users/530738/screenshots/1910587/dribbble_iso_house.gif" width="110" height="60"></a></div></h4>
+        <div class="home rotating"><h4><a href="{% url 'index' %}"><img src="http://clipart-library.com/images/kT85jj4gc.jpg" width="110" height="60"></a></div></h4>
         <h1 class="title">Flashcards</h1>
             {% if user.is_authenticated %}
                 <div class="username"><h4><a href="{% url 'user_profile' user.username %}">{{ user.get_username }}</a> | 
