@@ -11,7 +11,7 @@
     <div class="quizzes">
         {% for quiz in quizzes %} 
 
-        <div class="deck"><a href="{% url 'quiz-detail' %}">{{quiz.title}}</a></div>
+        <div class="deck"><a href="{{ quiz.get_absolute_url}}">{{quiz.title}}</a></div>
         {% endfor %}
         
         

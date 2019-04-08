@@ -3,7 +3,8 @@
 {% block content %}
 
 <div class="game_card">
-{% for card in cards %}
+<p>will this display</p>
+{% for q in card %}
     <div class="question">{{ card.question }}</div>
     <div class="answer">{{ card.answer }}</div>
     <div class="all_buttons">
@@ -17,5 +18,5 @@
 <div class="flashcardParent">
 
 </div>
-<script src="{% static 'js/script.js' %}"></script>
+{% comment %} <script src="{% static 'js/script.js' %}"></script> {% endcomment %}
 {% endblock %}

@@ -20,14 +20,15 @@ def index(request):
     return render(request, 'index.html', context=context)
 
 def quiz_detail(request, pk):
-    cards = get_object_or_404(Card, pk)
-    # question = cards.question
-    # answer = cards.answer
+    cards = get_object_or_404(Card, pk=pk)
+    quiz = cards.quiz
+    question = cards.question
+    answer = cards.answer
 
     return render(request, "game.html", {
-        "cards": cards,
-        # "quesiton": question,
-        # "answer": answer,
+        "quiz": quiz,
+        "quesiton": question,
+        "answer": answer,
     })
 
 def user_profile(request, username):

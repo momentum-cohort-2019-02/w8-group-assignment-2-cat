@@ -12,8 +12,8 @@ class Quiz(models.Model):
 
     def __str__(self):
         return str(self.title)
-    # def get_absolute_url(self):
-    #     return reverse('create-card', args=[str(self.id)])
+    def get_absolute_url(self):
+        return reverse('quiz-detail', args=[str(self.id)])
 
 class Card(models.Model):
     quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE, related_name="cards")
