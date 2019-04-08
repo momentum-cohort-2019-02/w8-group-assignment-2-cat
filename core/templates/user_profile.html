@@ -2,23 +2,25 @@
 {% load staticfiles %}
 
 {% block content %}
+    <div class="welcome">
     {% if user.is_authenticated %}
         <h3>{{ user.username.upper }}</h3>
         <p>Welcome to your profile page!</p>
     
-    <table class="ma3">
+    <div class="welcome ma3">
         <tr class="ma2">
             <td class="ma2">UserName: </td>
             <td class="ma2">{{ user.username }}</td>
         </tr>
-        <tr class="ma2">
+        <tr class="welcome ma2">
             <td class="ma2">Email: </td>
             <td class="ma2">{{ user.email }}</td>
         </tr>
         
-    </table>
+    </div>
     {% endif %}
     <br><a href="{% url 'create-quiz' %}">Make a quiz!</a>
+    </div>
    
 
 <div>
