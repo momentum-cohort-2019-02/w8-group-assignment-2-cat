@@ -5,12 +5,24 @@
 {% block content %}
 
 <div>
-<h1>Welcome!</h1>
+<h1 class="welcome">Welcome!</h1>
 </div>
+{% if user.is_authenticated %}
+    <div class="quizzes">
+        {% for quiz in quizzes %} 
 
-    {% for quiz in quizzes %} 
-    <a href="{% url 'game'%}">{{quiz.title}}</a>
-    {% endfor %}
+        <div class="deck"><a href="{% url 'game'%}">{{quiz.title}}</a></div>
+        {% endfor %}
+        
+        
+        
+    </div><br><br>
+    <div class="welcome"><a href="{% url 'create-quiz' %}">Or make a new quiz!</a></div>
+{% else %}
+        <div class="welcome"><h4><a href="{% url 'auth_login' %}">Login</a> or
+        <a href="{% url 'registration_register' %}">Register</a></h4></div>
+{% endif %}
+
 
     <a href="{% url 'game' %}">Click here for your gaaaaaaame.</a>
 

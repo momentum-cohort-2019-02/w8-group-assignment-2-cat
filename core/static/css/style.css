@@ -1,5 +1,5 @@
 * {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 }
 
 .title_bar {
@@ -7,7 +7,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     border-style: ridge;
-    border-color: black;
+    border-color: darkgrey;
     border-radius: 10px;
     
 }
@@ -15,36 +15,56 @@
 .title {
     width: 50%;
     text-align: center;
-    border-style: double;
+    color: white;
     margin: 15px;
-    border-color: greenyellow;
-    background-image:
-    radial-gradient(
-        circle at top right,
-        lightgray,
-        purple
-    );
+    
+    border-radius: 10px;
+    background: darkgrey;
+    padding: 20px;
 }
 
 .home {
-    border-style: double;
+    
     margin: 15px;
     padding: 10px;
-    border-color: aqua;
+    
+    border-radius: 10px;
 }
 
 .username {
-    border-style: double;
+    
     margin: 15px;
-    border-color: royalblue;
+    padding: 15px;
+
 }
 
 .login {
-    border-style: double;
+    
     margin: 15px;
-    border-color: red;
+    
+    border-radius: 10px;
 }
 
 .welcome {
-    text-align: center
+    text-align: center; 
+}
+
+.quizzes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.deck {
+    width: 21rem;
+    height: 5rem;
+    text-decoration: none;
+    border-style: dotted;
+    border-color: darkgrey;
+    border-radius: 10px;
+    text-align: center;
+    margin: 15px;
+    padding-top: 25px;
+    box-shadow: 10px 5px 5px darkgray;
+    text-transform: capitalize;
 }
