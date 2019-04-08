@@ -23,15 +23,23 @@ document.addEventListener("DOMContentLoaded", function() {
 
   let flashcard_parent = document.getElementsByClassName("flashcardParent");
   let answer_button = document.getElementsByClassName("display_answer_button");
-  let start_game = document.getElementsByClassName("startTheGame");
-
-  start_game.addEventListener("click", event => {card_function(flashcard_parent, flashcard_child)});
-  answer_button.addEventListener("click", card_function(flashcard_parent, flashcard_child));
+  let start_game = document.querySelector(".startTheGame");
 
   function card_function(flashcard_parent, flashcard_child){
     flashcard_parent.insertAdjacentHTML('beforeend', flashcard_child)
     console.log('Hello')
   };
+
+console.log(start_game)
+
+start_game.addEventListener("click", function() {card_function(flashcard_parent, flashcard_child)});
+  
+function answer_button_function(){answer_button.addEventListener("click", card_function(flashcard_parent, flashcard_child))};
+
+  
+
+
+
 });
   
  
