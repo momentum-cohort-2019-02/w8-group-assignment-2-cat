@@ -52,18 +52,17 @@
 .quizzes {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 .deck {
     width: 21rem;
     height: 5rem;
-    color: aquamarine;
     text-decoration: none;
     border-style: dotted;
     border-color: darkgrey;
     border-radius: 10px;
     text-align: center;
-    justify-content: space-evenly;
     margin: 15px;
     padding-top: 25px;
 
