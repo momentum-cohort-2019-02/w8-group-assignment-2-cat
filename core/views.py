@@ -4,6 +4,8 @@ from django.contrib.auth.models import User
 from .forms import QuizForm, CardForm
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+import json
+from django.http import JsonResponse
 
 def index(request):
 
@@ -16,6 +18,17 @@ def index(request):
     }
 
     return render(request, 'index.html', context=context)
+
+def quiz_detail(request, pk):
+    cards = get_object_or_404(Card, pk)
+    # question = cards.question
+    # answer = cards.answer
+
+    return render(request, "game.html", {
+        "cards": cards,
+        # "quesiton": question,
+        # "answer": answer,
+    })
 
 def user_profile(request, username):
     user = User.objects.get(username=username)
@@ -58,3 +71,8 @@ def game(request):
         'quizzes': quizzes,
     }
     return render(request, 'game.html', context=context)
+
+def get_card_data(request, pk):
+    deck = get_object_or_404(Quiz, pk=pk)
+    cards = deck.card.all()
+    return JsonResponse({'deck_cards': [(card.question, card.answer) for card in cards]})

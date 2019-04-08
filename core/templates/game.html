@@ -1,6 +1,19 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+
+<div class="game_card">
+{% for card in cards %}
+    <div class="question">{{ card.question }}</div>
+    <div class="answer">{{ card.answer }}</div>
+    <div class="all_buttons">
+        <div class="correct">Correct</div>
+        <div class="incorrect">Incorrect</div>
+        <div class="next">Next</div>
+    </div>
+{% endfor %}
+</div>
+
 <div class="flashcardParent">
 
 </div>
