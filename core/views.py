@@ -1,3 +1,5 @@
+import json
+from django.core import serializers
 from django.shortcuts import render, redirect, get_object_or_404
 from core.models import Card, Quiz
 from django.contrib.auth.models import User
