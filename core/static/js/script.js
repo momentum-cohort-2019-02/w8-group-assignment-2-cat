@@ -1,3 +1,48 @@
+// const pk = document.URL.split('/')[6]
+// console.log(pk)
+let cardDataUrl = `/core/quiz/8/get_card_data/`
+
+function getQuizCards (cardDataUrl) {
+  let promise = fetch(cardDataUrl).then(function (response) {
+    if (!response.ok) {
+      throw Error(response.statusText)
+    }
+    console.log('response json')
+    return response.json()
+  })
+  console.log('promise')
+  return promise
+}
+
+// courtesy https://gomakethings.com/how-to-shuffle-an-array-with-vanilla-js/ - shuffles deck on refresh
+function shuffle (array) {
+  var currentIndex = array.length
+  var temporaryValue, randomIndex
+  // While there remain elements to shuffle...
+  while (currentIndex !== 0) {
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex)
+    currentIndex -= 1
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex]
+    array[currentIndex] = array[randomIndex]
+    array[randomIndex] = temporaryValue
+  }
+  return array
+}
+
+function getCard (cardDataUrl) {
+  console.log('getting card')
+  getQuizCards(cardDataUrl).then(list => {
+      let cardArray = (Object.values(list)[0])
+      console.log(cardArray)
+    })
+}
+
+
+
+
+
 document.addEventListener("DOMContentLoaded", function() {
   //Currently used until Json is properly imported.
   let dummyData = {
@@ -37,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function() {
     console.log("Is this running?");
   };
 
-
+  
 
   // function card_function(answer_button, flashcard_parent, flashcard_child){
   //   flashcard_parent.insertAdjacentHTML('beforeend', flashcard_child)
@@ -55,7 +100,8 @@ document.addEventListener("DOMContentLoaded", function() {
     answer_button.addEventListener("click", game_starter(flashcard_parent, flashcard_child))
   };
 
-game_starter();
+  game_starter();
+  getCard(cardDataUrl);
 });
   
 
