@@ -1,3 +1,5 @@
+import json
+from django.core import serializers
 from django.shortcuts import render, redirect, get_object_or_404
 from core.models import Card, Quiz
 from django.contrib.auth.models import User
@@ -54,7 +56,8 @@ def game(request):
     cards = Card.objects.all()
 
     context = {
-        'cards': cards,
-        'quizzes': quizzes,
+       'cards': cards,
+       'quizzes': quizzes,
     }
+
     return render(request, 'game.html', context=context)

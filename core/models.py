@@ -23,4 +23,4 @@ class Card(models.Model):
     answer_wrong = models.IntegerField(default="0")
     
     def __str__(self):
-        return str(self.quiz)
+        return str(self.question)

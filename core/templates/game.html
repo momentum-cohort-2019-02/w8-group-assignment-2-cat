@@ -1,8 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<div class="flashcardParent">
 
+<button class="startTheGame">
+    Click here to start!
+</button>
+<div class="flashcardParent">
 </div>
-<script src="{% static 'js/script.js' %}"></script>
+<script src = {% static "js/script.js" %}></script>
 {% endblock %}
