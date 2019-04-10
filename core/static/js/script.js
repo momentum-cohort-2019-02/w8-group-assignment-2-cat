@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function() {
     //Contains the functionality for displaying the contents of the front string literal. 
     //Calls queryAssigner to assign querySelectors to created items.
 
-    answer_button.addEventListener("click", flashcard_parent.insertAdjacentHTML('beforeend', flashcard_front_child));
+    answer_button.addEventListener("click", function(){flashcard_parent.insertAdjacentHTML('beforeend', flashcard_front_child)});
     queryQuestionAssigner(answer_button, flashcard_parent);
     console.log("Is this running?");
   };
