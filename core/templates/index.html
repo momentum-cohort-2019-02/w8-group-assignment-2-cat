@@ -11,8 +11,11 @@
     <div class="quizzes">
         {% for quiz in quizzes %} 
 
-        <div class="deck"><a href="{% url 'game'%}">{{quiz.title}}</a></div>
+        <div class="deck"><a href="{% url 'game' %}">{{quiz.title}}</a></div>
+        <h1>{{quiz.pk}}</h1>
         {% endfor %}
+        {% comment %} try pass through data attribute
+        in view, grab from data attribute {% endcomment %}
         
         
         

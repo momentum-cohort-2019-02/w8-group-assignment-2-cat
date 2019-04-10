@@ -1,3 +1,48 @@
+// const pk = document.URL.split('/')[6]
+// console.log(pk)
+let cardDataUrl = `/core/quiz/8/get_card_data/`
+
+function getQuizCards (cardDataUrl) {
+  let promise = fetch(cardDataUrl).then(function (response) {
+    if (!response.ok) {
+      throw Error(response.statusText)
+    }
+    console.log('response json')
+    return response.json()
+  })
+  console.log('promise')
+  return promise
+}
+
+// courtesy https://gomakethings.com/how-to-shuffle-an-array-with-vanilla-js/ - shuffles deck on refresh
+function shuffle (array) {
+  var currentIndex = array.length
+  var temporaryValue, randomIndex
+  // While there remain elements to shuffle...
+  while (currentIndex !== 0) {
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex)
+    currentIndex -= 1
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex]
+    array[currentIndex] = array[randomIndex]
+    array[randomIndex] = temporaryValue
+  }
+  return array
+}
+
+function getCard (cardDataUrl) {
+  console.log('getting card')
+  getQuizCards(cardDataUrl).then(list => {
+      let cardArray = (Object.values(list)[0])
+      console.log(cardArray)
+    })
+}
+
+
+
+
+
 document.addEventListener("DOMContentLoaded", function() {
   //Currently used until Json is properly imported.
   let dummyData = {
@@ -52,6 +97,7 @@ document.addEventListener("DOMContentLoaded", function() {
     console.log("Is this running?");
   };
 
+
   function display_answer(){
     //Contains the same information as the display_question function, but for the answer side of the card.
     //queryAssigner for this function will also assign eventListeners to the right/wrong answer buttons.
@@ -59,6 +105,7 @@ document.addEventListener("DOMContentLoaded", function() {
     answer_button.addEventListener("click", flashcard_parent.insertAdjacentHTML('beforeend', flashcard_back_child));
 
   }
+
 
   // function card_function(answer_button, flashcard_parent, flashcard_child){
   //   flashcard_parent.insertAdjacentHTML('beforeend', flashcard_child)
@@ -76,6 +123,7 @@ document.addEventListener("DOMContentLoaded", function() {
     answer_button.addEventListener("click", display_question(flashcard_parent, flashcard_front_child))
   };
 
+
   function queryAnswerAssigner(){
     //This assigns event listeners to the answer_right/answer_wrong buttons.
     //When the buttons are clicked, it displays the next question.
@@ -88,6 +136,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
 display_question();
+
 });
   
 

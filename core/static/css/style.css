@@ -59,7 +59,7 @@
     width: 21rem;
     height: 5rem;
     text-decoration: none;
-    border-style: dotted;
+    border-style: ridge;
     border-color: darkgrey;
     border-radius: 10px;
     text-align: center;

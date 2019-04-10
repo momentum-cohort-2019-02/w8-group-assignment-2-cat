@@ -6,6 +6,8 @@ from django.contrib.auth.models import User
 from .forms import QuizForm, CardForm
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+import json
+from django.http import JsonResponse
 
 def index(request):
 
@@ -61,3 +63,8 @@ def game(request):
     }
 
     return render(request, 'game.html', context=context)
+
+def get_card_data(request, pk):
+    quiz = get_object_or_404(Quiz, pk=pk)
+    cards = quiz.cards.all()
+    return JsonResponse({'quiz_cards': [(card.question, card.answer) for card in cards]})
